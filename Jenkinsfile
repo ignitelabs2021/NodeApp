@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("2681997/anooshah")
+        app = docker.build("2681997/anu")
     }
 
     stage('Test image') {
@@ -24,7 +24,7 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+        docker.withRegistry('https://registry.hub.docker.com', '8a5902ca-2cc8-4cfc-b20f-177aa6925091') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
